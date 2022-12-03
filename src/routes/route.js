@@ -47,10 +47,19 @@ router.post('/set/:key/:p_raq/:p_tablero', async (req, res) => {
         res.send("")
     }
 })
-router.post('/seth/:key/:p_raq/:p_tablero', async (req, res) => {
+router.post('/setht/:key/:p_tablero', async (req, res) => {
+    if (req.params.key.length >= 5 && Object.keys(json).indexOf(req.params.key) != -1){
+        json[req.params.key][1] = req.params.p_tablero.split(',').map((a) =>{return parseInt(a)})
+        await writeFile(filesrc, JSON.stringify(json), (err) => console.log(err))
+        res.send("")
+    }else {
+        res.send("")
+    }
+    update()
+})
+router.post('/sethr/:key/:p_raq', async (req, res) => {
     if (req.params.key.length >= 5 && Object.keys(json).indexOf(req.params.key) != -1){
         json[req.params.key][0] = parseInt(req.params.p_raq)
-        json[req.params.key][1] = req.params.p_tablero.split(',').map((a) =>{return parseInt(a)})
         await writeFile(filesrc, JSON.stringify(json), (err) => console.log(err))
         res.send("")
     }else {

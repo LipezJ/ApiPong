@@ -10,7 +10,7 @@ let json = JSON.parse(file)
 router.post('/create/:key', async (req, res) => {
       
     if (req.params.key.length >= 5 && !(Object.keys(json).indexOf(req.params.key) != -1)){
-        json[req.params.key] = [0,[0,0],0]
+        json[req.params.key] = [0,[0,0],0,[0,0]]
         await writeFile(filesrc, JSON.stringify(json), (err) => console.log(err))
         res.send("")
     }else {
@@ -80,6 +80,15 @@ router.post('/setg/:key/:p_raq', async (req, res) => {
         res.send("")
     }
       
+})
+router.post('/setpts/:key/:pts', async (req, res) => {
+    if (req.params.key.length >= 5 && Object.keys(json).indexOf(req.params.key) != -1){
+        json[req.params.key][3] = req.params.pts.split(',').map((a) =>{return parseInt(a)})
+        await writeFile(filesrc, JSON.stringify(json), (err) => console.log(err))
+        res.send("")
+    } else {
+        res.send("")
+    }  
 })
 
 export default router

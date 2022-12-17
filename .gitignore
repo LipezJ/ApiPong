@@ -1,5 +1,2 @@
-dist
 node_modules
-python
-.babelrc
-pruebas.http
+package-lock.json

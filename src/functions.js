@@ -23,9 +23,6 @@ export const setg = async (data) => {
 export const seth = async (data) => {
     json[data['name']][0] = data['posr']
     json[data['name']][1] = data['pos']
-    await writeFile(filesrc, JSON.stringify(json))
-}
-export const setp = async (data) => {
     json[data['name']][3] = data['points']
     await writeFile(filesrc, JSON.stringify(json))
 }

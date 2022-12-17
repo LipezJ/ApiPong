@@ -1,7 +1,7 @@
 import express from "express";
 import { Server } from "socket.io";
 import http from "http"
-import { create, delete_, get, setg, seth, setp } from './functions.js'
+import { create, delete_, get, setg, seth } from './functions.js'
 
 const app = express()
 const server = http.createServer(app)
@@ -12,7 +12,6 @@ socket.on('connection', (socket) => {
     socket.on('delete', delete_)
     socket.on('seth', seth)
     socket.on('setg', setg)
-    socket.on('setg', setp)
     socket.on('get', (data) => get(data, socket))
 })
 

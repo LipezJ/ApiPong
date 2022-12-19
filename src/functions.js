@@ -12,7 +12,7 @@ export const create = async (data) => {
     }
 }
 export const delete_ = async (data) => {
-    if (!(data['name'] in Object.keys(json))) {
+    if (data['name'] in Object.keys(json)) {
         delete json[data['name']]
     }
 }

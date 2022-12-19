@@ -10,11 +10,11 @@ To store the data I do it locally in a json file and through the Socket.io funct
 
 #### The api itself has a total of 5 functions.
 
-> **1.** _create_: Generate a new "party" in the party.json file with all data set to 0.  
-> **2.** _delete_: Deletes a "party" from the party.json file.  
-> **3.** _seth_: receives changes from the host client and stores them in local storage.  
-> **4.** _setg_: receives changes from the guest client and stores them in local storage.  
-> **5.** _get_: send the game data to the clients.
+> **1. _create_**: Generate a new "party" in the party.json file with all data set to 0.  
+> **2. _delete_**: Deletes a "party" from the party.json file.  
+> **3. _seth_**: receives changes from the host client and stores them in local storage.  
+> **4. _setg_**: receives changes from the guest client and stores them in local storage.  
+> **5. _get_**: send the game data to the clients.
 
 ## How to use
 
